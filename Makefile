@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -m32 -Werror
+CFLAGS = -m64 -Wall -Werror
 AS = nasm
-ASFLAGS = -f elf32
+ASFLAGS = -f elf64
 LD = ld
-LDFLAGS = -m elf_i386 -dynamic-linker /lib/ld-linux.so.2
+LDFLAGS = -dynamic-linker /lib64/ld-linux-x86-64.so.2
 
 OBJ = add_asm.o add.o
 

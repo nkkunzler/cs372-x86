@@ -1,20 +1,18 @@
-bits 64
-
-extern add
-extern printf
-extern exit
-
-global _start
-
-SECTION .DATA
-    fmt:    db "%d", 10, 0 ; print a decimal followed by a newline and a null terminator
+extern add				; Find the add function, which is in add.c
 
 SECTION .TEXT
+	global _start
 
 _start:
-    push 20
-    push 20
-    call add
+	mov 	rdi, 69		; Setting add func param1 to 69
+	mov 	rsi, 96		; Setting add func param2 to 96
+	push 	rsi			; Saving the rsi reg to the stack
+	call 	add				; Calling add func in add.c with param1 and param2
+	pop 	rsi			; Restore the rsi reg from the stack
 
-    push 0
-    call exit   ; exit(0)
+	mov 	rdi, rax		; Setting add func param1 to return value from previous call func
+	call 	add				; call add function in add.c	
+
+	mov 	rax, 60		; setup to exit
+	mov 	rdi, 0		; exiting status 0
+	syscall					; System interupt to exit
