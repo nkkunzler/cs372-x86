@@ -1,10 +1,11 @@
+#include <stdint.h>
 #include <stdio.h>
 
-int add(int a, int b){
-	printf("a+b=%d\n", a+b); // This can be done in assembly, just didn't want to do it at the moment
+int64_t add(int64_t a, int64_t b){
+	printf("%ld + %ld = %ld\n", a, b, a+b);
     return a+b;
 }
 
-int main() {
-    return 0;
+int main(){
+	return 0;
 }
