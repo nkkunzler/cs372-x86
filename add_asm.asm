@@ -1,4 +1,4 @@
-bits 32
+bits 64
 
 extern add
 extern printf
@@ -15,10 +15,6 @@ _start:
     push 20
     push 20
     call add
-
-    push eax
-    push fmt
-    call printf ; printf(format, eax)
 
     push 0
     call exit   ; exit(0)

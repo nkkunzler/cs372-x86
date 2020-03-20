@@ -7,7 +7,7 @@ LDFLAGS = -m elf_i386 -dynamic-linker /lib/ld-linux.so.2
 
 OBJ = add_asm.o add.o
 
-main: $(OBJ)
+run: $(OBJ)
 	$(LD) $(LDFLAGS) -o $@ -lc $^
 
 %.o: %.c
@@ -19,5 +19,5 @@ main: $(OBJ)
 .PHONY: clean
 clean:
 	rm -f *.o
-	rm -f main
+	rm -f run
 
