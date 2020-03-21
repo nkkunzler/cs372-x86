@@ -2,6 +2,13 @@
 
 CS372 x86_64 Dinosaur Game written primarly in x86 with assistance from Ncurses C library.
 
+## How to Execute
+
+```
+$ make
+$ ./run
+```
+
 ## Helpful Info
 
 - Register Order For Parameters Used In Function Calls
