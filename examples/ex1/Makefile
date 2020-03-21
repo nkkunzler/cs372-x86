@@ -3,7 +3,7 @@ ASFLAGS = -f elf64
 LD = ld
 LDFLAGS = -dynamic-linker /lib64/ld-linux-x86-64.so.2
 
-OBJ = asm.o
+OBJ = line.o
 
 run: $(OBJ)
 	$(LD) $(LDFLAGS) -o $@ -lc $^ -lncurses
@@ -15,4 +15,3 @@ run: $(OBJ)
 clean:
 	rm -f *.o
 	rm -f run
-
